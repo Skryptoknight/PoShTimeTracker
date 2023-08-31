@@ -192,6 +192,8 @@ $AlwaysOnTopCheckBox.add_click({
     
 })
 
+<# Hiding of the window disabled as it could potentially cause powershell processes stuck in the background.
+
 $PsProcess = Get-WmiObject Win32_Process -Filter "processID = '$PID'"
 $ParentPsProcess = Get-WmiObject Win32_Process -Filter "processID = '$($PsProcess.ParentProcessId)'"
 
@@ -199,6 +201,9 @@ if ($ParentPsProcess.ProcessName -notlike "*code*" -and $PsProcess.ProcessName -
 {
     Hide-PSWindow
 }
+
+#>
+
 
 #Start the window
 $Window.Showdialog()
