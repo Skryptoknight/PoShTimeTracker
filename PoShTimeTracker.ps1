@@ -16,10 +16,11 @@ function Start-Timer
         $script:timerRunning = $true
     }
 
+    $script:timerRunning = $true
     $script:TaskName = $TaskNameTextBox.Text
     $script:TextCurrentTaskValue.Content = $TaskName
     $script:StartTime = Get-Date
-    $script:TextStartTimeValue.Content = $StartButtonTime.ToLongDateString() + " " + $StartButtonTime.ToLongTimeString()
+    $script:TextStartTimeValue.Content = $StartTime.ToLongDateString() + " " + $StartTime.ToLongTimeString()
     $script:ElapsedTime = 0
     $script:timer = new-object System.Windows.Threading.DispatcherTimer
     #Timer will run every second
